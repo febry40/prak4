@@ -1,9 +1,3 @@
-# Screenshot dan gambar
-*.png
-*.jpg
-*.jpeg
-*.gif
-ss project/
 
 # Node modules
 node_modules/
