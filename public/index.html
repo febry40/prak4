@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create API Key</title>
+
+    <style>
+        body {
+            background: #0d1b2a;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .card {
+            width: 400px;
+            margin: auto;
+            background: #1b263b;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Create API Key</h2>
+
+        <input type="text" id="apiKey" placeholder="Tekan Create untuk generate" readonly>
+
+        <button onclick="createKey()">Create</button>
+
+        <p id="info"></p>
+    </div>
+
+<script>
+async function createKey() {
+    const res = await fetch("/create", { method: "POST" });
+    const data = await res.json();
+
+    document.getElementById("apiKey").value = data.apikey;
+    document.getElementById("info").innerText = "Kunci dibuat di server (32 karakter hex).";
+}
+</script>
+</body>
+</html>
