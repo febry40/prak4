@@ -1,0 +1,19 @@
+# Screenshot dan gambar
+*.png
+*.jpg
+*.jpeg
+*.gif
+ss project/
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
